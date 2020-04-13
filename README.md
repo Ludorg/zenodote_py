@@ -50,6 +50,51 @@ Zenodote library manager (zndt-lm) is developped in Python 3 with [Visual Studio
 
 Zenodote library manager (zndt-lm) runs on Linux. It was initially developed on Ubuntu 18.04.4 LTS in a VM running in Hyper-V. Migration to GitHub was made with [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/), the cloud-powered dev environments.
 
+### Setup environment
+
+#### Virtual environment creation and optional venv installation
+
+To setup Python virtual environement, if pip or venv are not available, install them. But, according to [official documentation](https://docs.python.org/3.8/installing/index.html), venv (the standard tool for creating virtual environments) is available and has been part of Python since Python 3.3. The commands hereafter may not be required.
+
+```bash
+sudo apt-get update
+sudo apt-get install python3-venv
+sudo apt-get install python3-pip python3-setuptools
+```
+
+In a bash terminal, create and activate a virtual environment for installing required packages.
+
+```bash
+python3.8 -m venv zndt_env
+source ./zndt_env/bin/activate
+```
+
+Then, select the created environment in VSCode.
+
+![selection of venv](./doc/img/select_venv.png)
+
+#### Packages installation
+
+Required packages can each be installed individually.
+
+```bash
+pip install verboselogs
+pip install coloredlogs
+pip install requests
+pip install flask
+```
+
+All required packages can also be installed in a single command with the requirements.txt file.
+
+```bash
+pip install --no-cache-dir -r requirements.txt
+```
+
+A warning on the installed version of pip may appear. Upgrading is recommended.
+
+```bash
+pip install --upgrade pip
+```
 
 ## About this project
 
