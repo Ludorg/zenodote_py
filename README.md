@@ -3,6 +3,31 @@
 ![License](https://img.shields.io/github/license/Ludorg/zenodote_py)
 ![Twitter Follow](https://img.shields.io/twitter/follow/Ludorg1?style=social)
 
+## Prerequisites
+
+VSCode
+Python 3
+Formatted with autopep8
+
+```json
+{
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./zenodote_py/app",
+        "-p",
+        "*test.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": true,
+    "python.pythonPath": "/opt/python/latest/bin/python3.8",
+    "python.autoComplete.extraPaths": [
+        "./zenodote_py/app",
+    ]
+}
+```
+
 ## About this project
 
 ### Some words on Zénodote the librarian
