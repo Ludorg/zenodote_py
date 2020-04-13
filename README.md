@@ -11,7 +11,7 @@ As detailled in paragraph "[about this project](#about-this-project)", this is a
 
 ### Code edition
 
-Zenodote library manager (zndt-lm) is developped in Python 3 with [Visual Studio Code](https://code.visualstudio.com/) and its powerful [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python). Code is formatted with autopep8 (default value). [Linting](https://code.visualstudio.com/docs/python/linting) is performed with pylint. The configuration for this editor is given below. These parameters are workspace settings.
+Zenodote library manager (zndt-lm) is developped in Python 3 with [Visual Studio Code](https://code.visualstudio.com/) and its powerful [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python). Python source code is formatted with autopep8 (default value). [Linting](https://code.visualstudio.com/docs/python/linting) is performed with pylint. The configuration for this editor is given below. These parameters are workspace settings.
 
 ```json
 {
@@ -48,7 +48,7 @@ Zenodote library manager (zndt-lm) is developped in Python 3 with [Visual Studio
 
 ### Development environment
 
-Zenodote library manager (zndt-lm) runs on Linux. It was initially developed on Ubuntu 18.04.4 LTS in a VM running in Hyper-V. Migration to GitHub was made with [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/), the cloud-powered dev environments.
+Zenodote library manager (zndt-lm) runs on Linux. It was initially developed on Ubuntu 18.04.4 LTS in a VM running in Hyper-V. Migration to GitHub was made and tested with [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/), the cloud-powered dev environments provided by Microsoft.
 
 ### Setup environment
 
@@ -75,6 +75,12 @@ Then, select the created environment in VSCode.
 
 #### Packages installation
 
+To avoid a warning on the installed version of pip, upgrading is recommended and is a quick operation.
+
+```bash
+pip install --upgrade pip
+```
+
 Required packages can each be installed individually.
 
 ```bash
@@ -88,12 +94,6 @@ All required packages can also be installed in a single command with the require
 
 ```bash
 pip install --no-cache-dir -r requirements.txt
-```
-
-A warning on the installed version of pip may appear. Upgrading is recommended.
-
-```bash
-pip install --upgrade pip
 ```
 
 ## About this project
