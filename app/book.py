@@ -4,13 +4,12 @@
 # by Ludorg.Net (Ludovic LIEVRE) 2019/05/13
 # https://ludorg.net/
 #
-# This work is licensed under the
-# Creative Commons Attribution 4.0 International License.
-# To view a copy of this license,
-# visit https://creativecommons.org/licenses/by/4.0/.
+# This work is licensed under the MIT License.
+# See the LICENSE file in the root directory of this source tree.
 #
 
 
+from enum import Enum, auto
 import sqlite3
 
 
@@ -33,7 +32,7 @@ class Book:
     #     if protocol is sqlite3.PrepareProtocol:
     #         return self.__repr__()
 
-from enum import Enum, auto
+
 class BookType(Enum):
     OPEN_LIBRARY = auto()
     GOOGLE_BOOKS = auto()
@@ -49,12 +48,12 @@ class ol_Book(Book):
         self.type = BookType.OPEN_LIBRARY
         pass
 
+
 class gb_Book(ol_Book):
     def __init__(self, isbn, author, title, cover, date, json_data, book_url, author_url=None):
         super().__init__(isbn, author, title, cover, date, json_data, book_url, author_url)
-        self.type = BookType.GOOGLE_BOOKS # override type
+        self.type = BookType.GOOGLE_BOOKS  # override type
         pass
-
 
     # def __conform__(self, protocol):
     #     if protocol is sqlite3.PrepareProtocol:

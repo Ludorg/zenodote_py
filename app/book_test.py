@@ -4,10 +4,8 @@
 # by Ludorg.Net (Ludovic LIEVRE) 2019/05/13
 # https://ludorg.net/
 #
-# This work is licensed under the
-# Creative Commons Attribution 4.0 International License.
-# To view a copy of this license,
-# visit https://creativecommons.org/licenses/by/4.0/.
+# This work is licensed under the MIT License.
+# See the LICENSE file in the root directory of this source tree.
 #
 
 
@@ -33,12 +31,11 @@ class BookTestCase(unittest.TestCase):
         self.assertEqual(b.json_data, "{ISBN:\"9782847200065\"}")
         self.assertEqual(
             b.book_url, "https://openlibrary.org/books/OL12627293M/aaa")
-        
+
         self.assertEqual(b.type, BookType.OPEN_LIBRARY)
 
         print(b)
 
-        
     def test_construct_gb(self):
         b = gb_Book(9782847200065, "aaa", "bbb", "ccc", "2019/11/09",
                     "{ISBN:\"9782847200065\"}", "https://openlibrary.org/books/OL12627293M/aaa")
@@ -49,7 +46,7 @@ class BookTestCase(unittest.TestCase):
         self.assertEqual(b.json_data, "{ISBN:\"9782847200065\"}")
         self.assertEqual(
             b.book_url, "https://openlibrary.org/books/OL12627293M/aaa")
-        
+
         self.assertEqual(b.type, BookType.GOOGLE_BOOKS)
 
         print(b)
