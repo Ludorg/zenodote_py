@@ -128,7 +128,7 @@ sudo apt-get install sqlite3
 
 ![debug sqlite](./doc/img/debug_sqlite_add_item.png)
 
-### Deployment as Azure App Service (Linux)
+### Deployment as Azure App Service
 
 TODO
 
@@ -147,7 +147,7 @@ flask init-db
 
 ### Add item from ISBN to database
 
-To add an item to database, the python add.py script is used. It can be run with one ISBN number as argument and must be run from root directory of this source tree. Virtual environment must be activated before this operation.
+To add an item to database, the python ./app/add.py script is used. It can be run with one ISBN number as argument and must be run from root directory of this source tree. Virtual environment must be activated before this operation.
 
 ```bash
 source ../zndt_env/bin/activate
@@ -158,6 +158,8 @@ deactivate
 ![add item](./doc/img/add_item.png)
 
 The cover image, if available, is downloaded locally in folder 'app/static/img\_data/'. A sub-folder named by ISBN is created and contains the image data for further display by the Zenodote web server.
+
+To perform multiple add operations, a script zndt_add.sh is provided. This script reads the content of isbn_list.txt (one ISBN per line) and runs the python command ./app/add.py. The zndt_add.sh script also activates virtual environment.
 
 ---
 
@@ -185,6 +187,18 @@ Zenodote library manager (zndt-lm) performs queries on Open Library and on Googl
 The query (http GET) on Open Library for book with ISBN [9782070310951](https://www.librarything.com/work/2124602/book/176871878) is: <https://openlibrary.org:443/api/books?bibkeys=ISBN:9782070310951&format=json&jscmd=data>. The cover URL is then retrieved in JSON field 'cover/large'. This query is implemented in file isbn_ol.py.
 
 When Open Library does not provide results, Google Books is then requested. The corresponding http GET request (again for book with ISBN [9782070310951](https://www.librarything.com/work/2124602/book/176871878)) is <https://www.googleapis.com/books/v1/volumes?q='9782070310951'>. This request is implemented in file isbn_gb.py.
+
+---
+
+## TODO and enhancement ideas
+
+- [ ] Deployment as Azure App Service
+- [ ] Filter and sort in Zenodote web server
+- [ ] Search in Zenodote web server
+- [ ] User access control for web server
+- [ ] Multi-user support
+- [ ] Add book to database from web server
+- [ ] Improve UI design
 
 ---
 
