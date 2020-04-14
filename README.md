@@ -175,6 +175,8 @@ Il est le premier bibliothécaire de la bibliothèque d'Alexandrie. Ptolémée I
 
 Source : [Zénodote (Wikipedia)](http://fr.wikipedia.org/wiki/Z%C3%A9nodote) [Zenodotus (Wikipedia)](https://en.wikipedia.org/wiki/Zenodotus)
 
+[Social image for this GitHub repo](./doc/img/Ancientlibraryalexendria.jpg) is a nineteenth century artistic rendering of the Library of Alexandria by the German artist O. Von Corven, based partially on the archaeological evidence available at that time (see Wikipedia page on [Library of Alexandria](https://en.wikipedia.org/wiki/Library_of_Alexandria)).
+
 ### Origin of Zenodote library manager (zndt-lm)
 
 Zenodote was my "pet project" which started in 2012/2013.
