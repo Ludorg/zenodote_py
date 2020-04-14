@@ -9,13 +9,17 @@ As detailled in paragraph "[about this project](#about-this-project)", this is a
 
 ## Prerequisites
 
-Zenodote library manager (zndt-lm) requires Python 3, a Linux environment installation and Visual Studio Code for edition.
-The following Python packages are used:
+Zenodote library manager (zndt-lm) requires Python 3, a Linux installation and Visual Studio Code for edition.
+The following non-standard Python packages are used:
 
 - [requests](https://pypi.org/project/requests/)
 - [verboselogs](https://pypi.org/project/verboselogs/)
 - [coloredlogs](https://pypi.org/project/coloredlogs/)
 - [Flask](https://pypi.org/project/Flask/)
+
+TODO: add sqlite3
+
+TODO: Deployment
 
 ### Code edition
 
@@ -33,9 +37,10 @@ Zenodote library manager (zndt-lm) is developped in Python 3 with [Visual Studio
     "python.testing.pytestEnabled": false,
     "python.testing.nosetestsEnabled": false,
     "python.testing.unittestEnabled": true,
-    "python.pythonPath": "/opt/python/latest/bin/python3.8",
+    "python.pythonPath": "zndt_env/bin/python",
     "python.autoComplete.extraPaths": [
         "./zenodote_py/app",
+        "./zenodote_py/"
     ],
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true
@@ -112,8 +117,14 @@ TODO
 
 ## Using Zenodote library manager (zndt-lm)
 
+### Database creation
+
+TODO
+
+```bash
 FLASK_APP=app
 flask init-db
+```
 
 ---
 
