@@ -118,6 +118,16 @@ All required packages can also be installed in a single command with the require
 pip install --no-cache-dir -r requirements.txt
 ```
 
+#### Installing sqlite3 tool
+
+Installing sqlite3 tool is not mandatory. It could help to inspect the database as shown below.
+
+```bash
+sudo apt-get install sqlite3
+```
+
+![debug sqlite](./doc/img/debug_sqlite_add_item.png)
+
 ### Deployment as Azure App Service (Linux)
 
 TODO
@@ -128,12 +138,26 @@ TODO
 
 ### Database creation
 
-TODO: add description on paths
+Zenodote application is stored in the 'app' directory. First step when using Zenodote library manager is to create the database. The command to create it is given below. It must be run from root directory of this source tree. Folder 'instance' contains the created database zndt.sqlite.
 
 ```bash
 FLASK_APP=app
 flask init-db
 ```
+
+### Add item from ISBN to database
+
+To add an item to database, the python add.py script is used. It can be run with one ISBN number as argument and must be run from root directory of this source tree. Virtual environment must be activated before this operation.
+
+```bash
+source ../zndt_env/bin/activate
+python3 ./app/add.py 9782070310951
+deactivate
+```
+
+![add item](./doc/img/add_item.png)
+
+The cover image, if available, is downloaded locally in folder 'app/static/img\_data/'. A sub-folder named by ISBN is created and contains the image data for further display by the Zenodote web server.
 
 ---
 
