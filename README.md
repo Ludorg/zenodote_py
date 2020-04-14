@@ -28,7 +28,7 @@ Notable standard Python packages used by Zenodote are:
 - logging
 - unittest
 
-TODO: Deployment
+TODO: Add detail on Azure deployment
 
 ### Code edition
 
@@ -137,7 +137,7 @@ flask init-db
 
 ---
 
-## About ISBN Queries
+## ISBN Queries
 
 During my early research work on Zenodote, I gathered some information regarding ISBN (International Standard Book Number) web queries. The following URL are web API (almost REST) to perform ISBN query and get information on books. Examples in the next list are made with ISBN [9782070310951](https://www.librarything.com/work/2124602/book/176871878): "La Belle Dormit Cent ans" by [Gunnar Staalesen](https://en.wikipedia.org/wiki/Gunnar_Staalesen).
 
