@@ -54,13 +54,11 @@ Zenodote library manager (zndt-lm) is developped in Python 3 with [Visual Studio
 /opt/python/latest/bin/python3.8 -m pip install -U pylint --user
 ```
 
-### Development environment
+### Setup development environment
 
 Zenodote library manager (zndt-lm) runs on Linux. It was initially developed on Ubuntu 18.04.4 LTS in a VM running in Hyper-V. Migration to GitHub was made and tested with [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/), the cloud-powered dev environments provided by Microsoft.
 
 It should be possible to run Zenodote library manager (zndt-lm) on Windows directly or with [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about), the optional (and great) feature of Windows 10.
-
-### Setup environment
 
 #### Virtual environment creation and optional venv installation
 
@@ -105,6 +103,17 @@ All required packages can also be installed in a single command with the require
 ```bash
 pip install --no-cache-dir -r requirements.txt
 ```
+
+### Deployment as Azure App Service (Linux)
+
+TODO
+
+---
+
+## Using Zenodote library manager (zndt-lm)
+
+FLASK_APP=app
+flask init-db
 
 ---
 
