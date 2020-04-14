@@ -1,0 +1,4 @@
+verboselogs
+coloredlogs
+requests
+flask
