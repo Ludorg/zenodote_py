@@ -210,6 +210,7 @@ When Open Library does not provide results, Google Books is then requested. The 
 
 ## TODO and enhancement ideas
 
+- [X] Migration from private Azure DevOps repo to GitHub public repo
 - [ ] Deployment as Azure App Service
 - [ ] Filter and sort in Zenodote web server
 - [ ] Search in Zenodote web server
