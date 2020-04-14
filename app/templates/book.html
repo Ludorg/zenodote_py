@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}{{ book['title'] }}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<p class="body">{{ book['title'] }} by {{ book['author'] }}</p>
+<p class="body">ISBN: {{ book['isbn'] }} / Published date: {{ book['publish_date'] }}</p>
+<p><img src="{{ cover }}"></p>
+
+{% if book['ol_gb_type'] == 1 %}
+<p class="body"><a href="{{ book['book_url'] }}">{{ book['title'] }} on openlibrary.org</a></p>
+{% endif %}
+{% if book['ol_gb_type'] == 2 %}
+<p class="body"><a href="{{ book['book_url'] }}">{{ book['title'] }} on Google Books</a></p>
+{% endif %}
+
+<hr>
+
+{% endblock %}

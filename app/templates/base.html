@@ -1,0 +1,28 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Zenodote (zndt-lm)</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="shortcut icon" href="{{ url_for('static', filename='3ori-books_2-512.png') }}">
+<nav>
+  <h1><a href="{{ url_for('index') }}">Zenodote library manager (zndt-lm)</a></h1>
+  
+    {% if page != -1 %}
+    
+        {% if page != 1 %}<a href="/page/{{ page - 1 }}">&xlarr;&nbsp;</a>
+        {% endif %}
+
+        {{ page }} / {{ page_total }} 
+
+        {% if page < page_total %}<a href="/page/{{ page + 1 }}">&nbsp;&xrarr;</a>
+        {% else %}<a href="/page/{{ page}}">&nbsp;&xrarr;</a>{% endif %}    
+    {% endif %}
+  
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>
