@@ -147,7 +147,7 @@ flask init-db
 
 ### Add item from ISBN to database
 
-To add an item to database, the python ./app/add.py script is used. It can be run with one ISBN number as argument and must be run from root directory of this source tree. Virtual environment must be activated before this operation.
+To add an item to database, the python './app/add.py' script is used. It can be run with one ISBN number as argument and must be run from root directory of this source tree. Virtual environment must be activated before this operation.
 
 ```bash
 source ../zndt_env/bin/activate
@@ -159,7 +159,25 @@ deactivate
 
 The cover image, if available, is downloaded locally in folder 'app/static/img\_data/'. A sub-folder named by ISBN is created and contains the image data for further display by the Zenodote web server.
 
-To perform multiple add operations, a script zndt_add.sh is provided. This script reads the content of isbn_list.txt (one ISBN per line) and runs the python command ./app/add.py. The zndt_add.sh script also activates virtual environment.
+To perform multiple add operations, a script 'zndt_add.sh' is provided. This script reads the content of 'isbn_list.txt' (one ISBN per line) and runs the python command './app/add.py'. The 'zndt_add.sh' script also activates virtual environment.
+
+### Run the Zenodote library manager (zndt-lm) web server
+
+To run the Zenodote web server, after virtual environment activation, just run 'flask run' command as below. The script 'zndt_run_server.sh' does the same but debugging is activated. Beware, application is not secured and should not be deployed as it is.
+
+```bash
+source ../zndt_env/bin/activate
+FLASK_APP=app
+flask run --host=0.0.0.0
+```
+
+Open the server main page in your browser (<http://your.ip.address:5000>). Default port for Flask server is 5000, but can be modified. The main page contains the paginated list of books stored in the SQLite database. Arrows in the upper right corner allow navigation between pages.
+
+![zndt server books](./doc/img/zndt_srv_books.png)
+
+By clicking on a book title, it is possible to access the details of the book (author, title, publish date and a link for more details) and to display its cover, if it was available when added in database.
+
+![zndt server one book](./doc/img/zndt_srv_one_book.png)
 
 ---
 
