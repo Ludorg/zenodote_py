@@ -28,7 +28,7 @@ Notable standard Python packages used by Zenodote are:
 - logging
 - unittest
 
-TODO: Deployment
+TODO: Add detail on Azure deployment
 
 ### Code edition
 
@@ -137,7 +137,7 @@ flask init-db
 
 ---
 
-## About ISBN Queries
+## ISBN Queries
 
 During my early research work on Zenodote, I gathered some information regarding ISBN (International Standard Book Number) web queries. The following URL are web API (almost REST) to perform ISBN query and get information on books. Examples in the next list are made with ISBN [9782070310951](https://www.librarything.com/work/2124602/book/176871878): "La Belle Dormit Cent ans" by [Gunnar Staalesen](https://en.wikipedia.org/wiki/Gunnar_Staalesen).
 
@@ -174,6 +174,8 @@ _Zénodote, en grec ancien Ζηνόδοτος / Zênódotos (320–240 av. J.-C.
 Il est le premier bibliothécaire de la bibliothèque d'Alexandrie. Ptolémée II Philadelphe a recours à ses services, ainsi qu'à ceux d'Alexandre l'Étolien et Lycophron de Chalcis pour mettre au point des éditions critiques des grands poètes grecs. Alors que ses collègues prennent en charge respectivement les tragédies et les comédies, Zénodote s'attaque à l'œuvre d'Homère. Il publie une Recension (Διόρθωσις / Diórthôsis) ainsi qu'un Glossaire (Γλῶσσαι / Glôssai) de l’Iliade et de l’Odyssée, et rejette les Hymnes homériques comme étant postérieurs._
 
 Source : [Zénodote (Wikipedia)](http://fr.wikipedia.org/wiki/Z%C3%A9nodote) [Zenodotus (Wikipedia)](https://en.wikipedia.org/wiki/Zenodotus)
+
+[Social image for this GitHub repo](./doc/img/Ancientlibraryalexendria.jpg) is a nineteenth century artistic rendering of the Library of Alexandria by the German artist O. Von Corven, based partially on the archaeological evidence available at that time (see Wikipedia page on [Library of Alexandria](https://en.wikipedia.org/wiki/Library_of_Alexandria)).
 
 ### Origin of Zenodote library manager (zndt-lm)
 
