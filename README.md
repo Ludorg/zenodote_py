@@ -9,6 +9,14 @@ As detailled in paragraph "[about this project](#about-this-project)", this is a
 
 ## Prerequisites
 
+Zenodote library manager (zndt-lm) requires Python 3, a Linux environment installation and Visual Studio Code for edition.
+The following Python packages are used:
+
+- [requests](https://pypi.org/project/requests/)
+- [verboselogs](https://pypi.org/project/verboselogs/)
+- [coloredlogs](https://pypi.org/project/coloredlogs/)
+- [Flask](https://pypi.org/project/Flask/)
+
 ### Code edition
 
 Zenodote library manager (zndt-lm) is developped in Python 3 with [Visual Studio Code](https://code.visualstudio.com/) and its powerful [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python). Python source code is formatted with autopep8 (default value). [Linting](https://code.visualstudio.com/docs/python/linting) is performed with pylint. The configuration for this editor is given below. These parameters are workspace settings.
@@ -50,6 +58,8 @@ Zenodote library manager (zndt-lm) is developped in Python 3 with [Visual Studio
 
 Zenodote library manager (zndt-lm) runs on Linux. It was initially developed on Ubuntu 18.04.4 LTS in a VM running in Hyper-V. Migration to GitHub was made and tested with [Visual Studio Online](https://visualstudio.microsoft.com/services/visual-studio-online/), the cloud-powered dev environments provided by Microsoft.
 
+It should be possible to run Zenodote library manager (zndt-lm) on Windows directly or with [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about), the optional (and great) feature of Windows 10.
+
 ### Setup environment
 
 #### Virtual environment creation and optional venv installation
@@ -75,7 +85,7 @@ Then, select the created environment in VSCode.
 
 #### Packages installation
 
-To avoid a warning on the installed version of pip, upgrading is recommended and is a quick operation.
+To avoid a warning on the installed version of pip, its upgrade is recommended and is a quick operation.
 
 ```bash
 pip install --upgrade pip
@@ -95,6 +105,8 @@ All required packages can also be installed in a single command with the require
 ```bash
 pip install --no-cache-dir -r requirements.txt
 ```
+
+---
 
 ## About this project
 
@@ -122,6 +134,8 @@ This side project was a practical way to self-learn and experiment different web
 Some JavaScript tests were made with [Angular](https://angular.io/), [TypeScript](https://www.typescriptlang.org/) and then in Python with [Django](https://www.djangoproject.com/). Finally, mid-2019 Python with [Flask](https://palletsprojects.com/p/flask/) was chosen. Only this source code is stored in this public repo.
 
 This code was initialy managed in a private [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/repos/) repo: <https://dev.azure.com/ludorg/>. For public repo, GitHub was selected. There is no common history between these two Git repositories.
+
+---
 
 ## Contact
 
