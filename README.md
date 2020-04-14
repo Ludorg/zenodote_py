@@ -118,7 +118,17 @@ All required packages can also be installed in a single command with the require
 pip install --no-cache-dir -r requirements.txt
 ```
 
-### Deployment as Azure App Service (Linux)
+#### Installing sqlite3 tool
+
+Installing sqlite3 tool is not mandatory. It could help to inspect the database as shown below.
+
+```bash
+sudo apt-get install sqlite3
+```
+
+![debug sqlite](./doc/img/debug_sqlite_add_item.png)
+
+### Deployment as Azure App Service
 
 TODO
 
@@ -128,12 +138,46 @@ TODO
 
 ### Database creation
 
-TODO: add description on paths
+Zenodote application is stored in the 'app' directory. First step when using Zenodote library manager is to create the database. The command to create it is given below. It must be run from root directory of this source tree. Folder 'instance' contains the created database zndt.sqlite.
 
 ```bash
 FLASK_APP=app
 flask init-db
 ```
+
+### Add item from ISBN to database
+
+To add an item to database, the python './app/add.py' script is used. It can be run with one ISBN number as argument and must be run from root directory of this source tree. Virtual environment must be activated before this operation.
+
+```bash
+source ../zndt_env/bin/activate
+python3 ./app/add.py 9782070310951
+deactivate
+```
+
+![add item](./doc/img/add_item.png)
+
+The cover image, if available, is downloaded locally in folder 'app/static/img\_data/'. A sub-folder named by ISBN is created and contains the image data for further display by the Zenodote web server.
+
+To perform multiple add operations, a script 'zndt_add.sh' is provided. This script reads the content of 'isbn_list.txt' (one ISBN per line) and runs the python command './app/add.py'. The 'zndt_add.sh' script also activates virtual environment.
+
+### Run the Zenodote library manager (zndt-lm) web server
+
+To run the Zenodote web server, after virtual environment activation, just run 'flask run' command as below. The script 'zndt_run_server.sh' does the same but debugging is activated. Beware, application is not secured and should not be deployed as it is.
+
+```bash
+source ../zndt_env/bin/activate
+FLASK_APP=app
+flask run --host=0.0.0.0
+```
+
+Open the server main page in your browser (<http://your.ip.address:5000>). Default port for Flask server is 5000, but can be modified. The main page contains the paginated list of books stored in the SQLite database. Arrows in the upper right corner allow navigation between pages.
+
+![zndt server books](./doc/img/zndt_srv_books.png)
+
+By clicking on a book title, it is possible to access the details of the book (author, title, publish date and a link for more details) and to display its cover, if it was available when added in database.
+
+![zndt server one book](./doc/img/zndt_srv_one_book.png)
 
 ---
 
@@ -161,6 +205,18 @@ Zenodote library manager (zndt-lm) performs queries on Open Library and on Googl
 The query (http GET) on Open Library for book with ISBN [9782070310951](https://www.librarything.com/work/2124602/book/176871878) is: <https://openlibrary.org:443/api/books?bibkeys=ISBN:9782070310951&format=json&jscmd=data>. The cover URL is then retrieved in JSON field 'cover/large'. This query is implemented in file isbn_ol.py.
 
 When Open Library does not provide results, Google Books is then requested. The corresponding http GET request (again for book with ISBN [9782070310951](https://www.librarything.com/work/2124602/book/176871878)) is <https://www.googleapis.com/books/v1/volumes?q='9782070310951'>. This request is implemented in file isbn_gb.py.
+
+---
+
+## TODO and enhancement ideas
+
+- [ ] Deployment as Azure App Service
+- [ ] Filter and sort in Zenodote web server
+- [ ] Search in Zenodote web server
+- [ ] User access control for web server
+- [ ] Multi-user support
+- [ ] Add book to database from web server
+- [ ] Improve UI design
 
 ---
 
