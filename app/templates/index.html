@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Books{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+{% for book in ol_books %}
+<h4><a href="/book/{{ book['isbn'] }}">{{ book['title'] }}</a></h4>
+<p class="body">{{ book['author'] }}</p>
+<hr>
+{% endfor %}
+{% endblock %}

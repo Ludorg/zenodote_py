@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Books{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<p>
+  <table>
+    <td>
+      {% for book in ol_books %}
+      <tr>
+        <td>{{ book['isbn'] }}</td>
+        <td>{{ book['author'] }}</td>
+      </tr>
+      {% endfor %}
+    </td>
+  </table>
+</p>
+{% endblock %}
