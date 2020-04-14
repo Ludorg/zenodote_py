@@ -7,7 +7,7 @@ Zenodote is a "physical books" 📚 library manager based on web-queries using t
 
 As detailled in paragraph "[about this project](#about-this-project)", this is a side project to self-learn and experiment different web technologies, not a fully featured product. It is written in Python and uses [Flask](https://palletsprojects.com/p/flask/) with SQLite.
 
-For full featured "physical books" library manager, I warmly recommend [LibraryThing](https://www.librarything.com/) or its french equivalent [Babelio](https://www.babelio.com). LibraryThing is the type of application Zenodote library manager (zndt-lm) should be, but as already said, this is only an experimental side project. I used it, with the help of its [Android application](https://play.google.com/store/apps/details?id=com.librarything.librarything), to catalog my [own library](https://www.librarything.com/catalog/Ludorg) and the result is very satisfying.
+For full featured "physical books" library manager, I warmly recommend [LibraryThing](https://www.librarything.com/) or its french equivalent [Babelio](https://www.babelio.com). LibraryThing is the type of application Zenodote library manager (zndt-lm) should be, but as already said, this is only an experimental side project. I used LibraryThing, with the help of its [Android application](https://play.google.com/store/apps/details?id=com.librarything.librarything), to catalog my [own library](https://www.librarything.com/catalog/Ludorg) and the result is very satisfying.
 
 ---
 
@@ -139,7 +139,7 @@ flask init-db
 
 ## About ISBN Queries
 
-During my early research work on Zenodote, I gathered some information regarding ISBN (International Standard Book Number) web queries. The following URL are web API (almost REST) to perform ISBN query and get information on books. Examples in the next list are made with ISBN [9782070310951](https://www.librarything.com/work/2124602/book/176871878)
+During my early research work on Zenodote, I gathered some information regarding ISBN (International Standard Book Number) web queries. The following URL are web API (almost REST) to perform ISBN query and get information on books. Examples in the next list are made with ISBN [9782070310951](https://www.librarything.com/work/2124602/book/176871878): "La Belle Dormit Cent ans" by [Gunnar Staalesen](https://en.wikipedia.org/wiki/Gunnar_Staalesen).
 
 - ISBNdb API: <http://isbndb.com/api/v2/docs/books>
 - ISBNPlus API: <http://isbnplus.com/api/>
@@ -149,18 +149,18 @@ During my early research work on Zenodote, I gathered some information regarding
 - Google Search example: <https://www.google.com/search?tbm=bks&q=9782070310951>
 - Amazon Search example: <https://www.amazon.com/s?search-alias=stripbooks&field-isbn=9782070310951>
 
-Some sites that allowed to perform ISBN requests have disappeared since, and Internet Archive snapshots are linked instead.
+Some sites that allowed to perform ISBN requests have disappeared since, Internet Archive snapshots are linked instead.
 
 - OpenISBN: [http://www.openisbn.com/api.html](https://web.archive.org/web/20180201021905/http://www.openisbn.com/api.html)
 - LookupISBN: [http://www.lookupisbn.com/](https://web.archive.org/web/20160329025351/www.lookupisbn.com/)
 
 ### Zenodote ISBN Queries
 
-Zenodote library manager (zndt-lm) performs queries on Open Library and on Google Books. The JSON results are parsed and stored in a SQLite database. The cover images are downloaded and stored on local disk.
+Zenodote library manager (zndt-lm) performs queries on Open Library and on Google Books. The JSON results are parsed and stored in a SQLite database. The cover images are downloaded and stored on local disk for further display.
 
 The query (http GET) on Open Library for book with ISBN [9782070310951](https://www.librarything.com/work/2124602/book/176871878) is: <https://openlibrary.org:443/api/books?bibkeys=ISBN:9782070310951&format=json&jscmd=data>. The cover URL is then retrieved in JSON field 'cover/large'. This query is implemented in file isbn_ol.py.
 
-When Open Library does not provide results, Google Books is then requested. The GET request (again for book with ISBN [9782070310951](https://www.librarything.com/work/2124602/book/176871878)) is <https://www.googleapis.com/books/v1/volumes?q='9782070310951'>. This request is implemented in file isbn_gb.py.
+When Open Library does not provide results, Google Books is then requested. The corresponding http GET request (again for book with ISBN [9782070310951](https://www.librarything.com/work/2124602/book/176871878)) is <https://www.googleapis.com/books/v1/volumes?q='9782070310951'>. This request is implemented in file isbn_gb.py.
 
 ---
 
