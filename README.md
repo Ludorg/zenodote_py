@@ -5,7 +5,7 @@
 
 Zenodote is a "physical books" 📚 library manager based on web-queries using their ISBN (International Standard Book Number).
 
-As detailled in paragraph "[about this project](#about-this-project)", this is a side project to self-learn and experiment different web technologies, not a fully featured product. It is written in Python and uses [Flask](https://palletsprojects.com/p/flask/).
+As detailled in paragraph "[about this project](#about-this-project)", this is a side project to self-learn and experiment different web technologies, not a fully featured product. It is written in Python and uses [Flask](https://palletsprojects.com/p/flask/) with SQLite.
 
 For full featured "physical books" library manager, I warmly recommend [LibraryThing](https://www.librarything.com/) or its french equivalent [Babelio](https://www.babelio.com). LibraryThing is the type of application Zenodote library manager (zndt-lm) should be, but as already said, this is only an experimental side project. I used it, with the help of its [Android application](https://play.google.com/store/apps/details?id=com.librarything.librarything), to catalog my [own library](https://www.librarything.com/catalog/Ludorg) and the result is very satisfying.
 
@@ -14,14 +14,19 @@ For full featured "physical books" library manager, I warmly recommend [LibraryT
 ## Prerequisites
 
 Zenodote library manager (zndt-lm) requires Python 3, a Linux installation and Visual Studio Code for edition.
-The following non-standard Python packages are used:
+The following non-standard Python packages are used and must be installed (see [Packages installation](#packages-installation) below):
 
 - [requests](https://pypi.org/project/requests/)
 - [verboselogs](https://pypi.org/project/verboselogs/)
 - [coloredlogs](https://pypi.org/project/coloredlogs/)
 - [Flask](https://pypi.org/project/Flask/)
 
-TODO: add sqlite3
+Notable standard Python packages used by Zenodote are:
+
+- sqlite3
+- json
+- logging
+- unittest
 
 TODO: Deployment
 
@@ -123,7 +128,7 @@ TODO
 
 ### Database creation
 
-TODO
+TODO: add description on paths
 
 ```bash
 FLASK_APP=app
@@ -144,7 +149,7 @@ During my early research work on Zenodote, I gathered some information regarding
 - Google Search example: <https://www.google.com/search?tbm=bks&q=9782070310951>
 - Amazon Search example: <https://www.amazon.com/s?search-alias=stripbooks&field-isbn=9782070310951>
 
-Some sites have disappeared since, and Internet Archive snapshots are linked instead.
+Some sites that allowed to perform ISBN requests have disappeared since, and Internet Archive snapshots are linked instead.
 
 - OpenISBN: [http://www.openisbn.com/api.html](https://web.archive.org/web/20180201021905/http://www.openisbn.com/api.html)
 - LookupISBN: [http://www.lookupisbn.com/](https://web.archive.org/web/20160329025351/www.lookupisbn.com/)
